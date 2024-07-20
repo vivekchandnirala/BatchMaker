@@ -5,8 +5,17 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "excludeFiles": ["node_modules/**"],
-        "externalPackages": ["mongoose", "express"]
+        "includeFiles": [
+          "backend/**/*.js",
+          "backend/views/**/*.ejs"
+        ],
+        "excludeFiles": [
+          "node_modules/**"
+        ],
+        "externalPackages": [
+          "express",
+          "mongoose"
+        ]
       }
     },
     {
