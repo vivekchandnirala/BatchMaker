@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Route to serve index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.render();
 });
 
 // Route to serve the register page
