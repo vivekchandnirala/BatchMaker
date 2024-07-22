@@ -3,6 +3,18 @@ body {
     transition: background-color 0.3s ease;
     font-size: 16px;
 }
+
+
+/* Dynamically adjust height for mobile view */
+@media screen and (max-width: 768px) {
+  body {
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+}
+
+
+
 .division {
     display: flex;
     justify-content: space-between;
@@ -223,12 +235,13 @@ body.dark-mode {
 .photo-slider {
     width: 100%;
     overflow: hidden; /* Hide overflowing content */
+    height: auto;
 }
 
 .slides {
     display: flex;
     width: 500%; /* Set width to accommodate all slides */
-    transition: transform 2s ease; /* Smooth transition effect */
+    transition: transform 4s ease; /* Smooth transition effect */
 }
 
 .slides img {
@@ -239,8 +252,19 @@ body.dark-mode {
 /* Dynamically adjust height for mobile view */
 @media screen and (max-width: 768px) {
     .photo-slider {
-        height: 25vh; /* Adjust height as needed */
+        height: 26vh; /* Adjust height as needed */
     }
+
+    .slides img {
+      width: 100vw; /* Set width of each slide to 100% of viewport width */
+      height: 25vh; /* Maintain aspect ratio */
+  }
+
+  .slides {
+    display: flex;
+    width: 500%; /* Set width to accommodate all slides */
+    transition: transform 5s ease; /* Smooth transition effect */
+}
 }
 
 
@@ -248,61 +272,85 @@ body.dark-mode {
 
 
 /* Styles for the 5th Division */
+.updates-container {
+  margin-bottom: 15px;
+  display: flex;
+  width: 100%;
+  background-color: #189bff;
+  color: white;
+  font-size: 20px;
+}
 
+.fixed-part {
+  flex-basis: 30%;
+  padding: 10px;
+  background-color: #ff0000;
+  text-align: center;
+}
+
+.dynamic-part {
+  flex-basis: 70%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.update {
+  position: absolute;
+  white-space: nowrap;
+  right: 100%;
+  margin-top: 8px;
+  animation: slide-in 32s linear infinite; /* Adjusted total cycle time */
+}
+
+.new-update::after {
+  content: " NEW!";
+  color: yellow;
+  font-weight: bold;
+}
+
+@keyframes slide-in {
+  0%, 12.5% { left: 100%; }  /* 0s - 4s */
+  18.75%, 31.25% { left: 3%; }  /* 6s - 10s */
+  37.5%, 100% { left: -100%; }  /* 12s - 32s */
+}
+
+@media (max-width: 768px) {
   .updates-container {
-    /* margin-top: 0; */
-    margin-bottom: 15px;
-    display: flex;
-    width: 100%;
-    background-color: #189bff;
-    color: white;
-    font-size: 20px;
+    flex-direction: column;
+    font-size: 13px;
   }
+
   .fixed-part {
-    flex-basis: 30%;
-    padding: 10px;
-    background-color: #2175ec;
-    text-align: center;
+    width: auto;
+    background-color: #ff0000;
   }
+
   .dynamic-part {
-    flex-basis: 70%;
-    overflow: hidden;
-    position: relative;
+    width: auto;
+    position: static;
+    display: block;
   }
+
   .update {
-    position: absolute;
-    white-space: nowrap;
-    right: 100%;
-    margin-top: 8px;
-    animation: slide-in 15s linear infinite;
-  }
-  @keyframes slide-in {
-    0%, 25% { left: 100%; }
-    30%, 55% { left: 3%; }
-    60%, 100% { left: -100%; }
-  }
-  @media (max-width: 768px) {
-    .fixed-part, .dynamic-part {
-      width: 100%;
-    }
-    .fixed-part {
-      background-color: #ADD8E6;
-    }
-    .dynamic-part {
-      margin-top: 10px;
-    }
-    .update {
-      animation: slide-in-mobile 15s linear infinite;
-    }
-    @keyframes slide-in-mobile {
-      0%, 25% { right: 100%; }
-      30%, 55% { right: 0%; }
-      60%, 100% { right: -100%; }
-    }
+    position: static;
+    animation: none;
+    font-size: 15px;
+    margin-top: 10px;
+    white-space: normal;
   }
 
+  .new-update::after {
+    content: " NEW!";
+    color: yellow;
+    font-weight: bold;
+  }
 
-
+  .update::before {
+    content: "• ";
+  }
+}
 
 
 
@@ -447,12 +495,6 @@ body {
 
 
 
-  /* Styles for the 8th Division */
-  /* body {
-    margin: 0;
-    padding: 0;
-} */
-
 .division8 {
     margin: 20px; /* Margin from all sides */
     padding: 10px;
@@ -512,11 +554,7 @@ body {
 
 
 
-/* Styles for the 9th Division */
-/* body {
-    margin: 0;
-    padding: 0;
-} */
+
 
 .division9 {
     width: 100%; /* Set width to full */
@@ -569,8 +607,15 @@ body {
 /* Mobile view adjustments */
 @media (max-width: 768px) {
     .box {
-        width: 90%; /* Set width to full for mobile */
+        width: auto; /* Set width to full for mobile */
+        height: auto;
         
+    }
+
+    .box  img{
+      width: 280px;
+      margin-bottom:8px;
+      margin-top: 30px;
     }
 }
 

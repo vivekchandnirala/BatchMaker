@@ -260,6 +260,26 @@ body {
 
 
 
+/* Style for particular Flag page */
+.division50 img{
+    width: 50%;
+    height: 39vh;
+    background-color: yellow;
+}
+@media only screen and (max-width:600px){
+
+    .division50 img{
+        height: auto;
+        margin-top: 20px;
+        width: auto;
+    }
+}
+
+
+
+
+
+
 
 /* 6th Division Styles */
 .division6 {

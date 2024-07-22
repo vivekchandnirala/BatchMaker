@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 5px;
@@ -6,13 +5,14 @@ body {
     background-color: #fff; /* White background */
 }
 
-
 /* 1st Division Styles */
 .division1 {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     background-color: #f2f2f2;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .division1 .left {
@@ -31,54 +31,61 @@ body {
     margin-right: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+    .division1 {
+        width: 100%;
+        margin-left: 0;
+    }
 
+    .division1 .left {
+        margin-left: 0;
+    }
 
+    .division1 .right img {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+}
 
 /* 2nd Division */
- /* Styling for the first division */
- .first-division {
+.first-division {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
 }
 
-/* Styling for the NCC section */
 .ncc-section {
     display: flex;
     align-items: center;
 }
 
-/* Styling for the NCC logo */
 .ncc-logo img {
     width: 80px;
 }
 
-/* Styling for the text */
 .ncc-text {
     text-align: center;
     margin-left: 30px;
 }
 
-/* Styling for the Hindi text */
 .hindi-text {
     font-size: 20px;
 }
 
-/* Styling for the English text */
 .english-text {
     font-size: 30px;
 }
 
-/* Styling for the right logos */
 .right-logos {
     display: flex;
     gap: 40px;
 }
 
-/* Styling for the right logo of NCC */
-.right-logo img{
+.right-logo img {
     width: 100px;
 }
 
@@ -98,12 +105,10 @@ body {
     }
     .ncc-text {
         margin-left: 20px;
-       
     }
     .nav-toggle {
-        
         display: block; /* Show in mobile view */
-        margin-left: 55px;/* Push to the right side */
+        margin-left: 55px; /* Push to the right side */
     }
 }
 
@@ -142,7 +147,7 @@ body {
 .division3 nav ul li a {
     display: block;
     padding: 14px;
-    font-size:auto;
+    font-size: auto;
     text-decoration: none;
     color: #ffffff;
 }
@@ -193,9 +198,6 @@ body {
     }
 }
 
-
-
-
 /* 4th Division Styles */
 .division4 {
     display: flex;
@@ -205,11 +207,9 @@ body {
 }
 
 .division4 .path {
- 
     text-align: center;
     display: flex;
-    padding-top:9px;
-
+    padding-top: 9px;
 }
 
 .division4 .right {
@@ -234,6 +234,7 @@ body {
 
 
 
+
 /* Add any custom styling here */
 .ncc-rank {
     font-weight: bold;
@@ -243,8 +244,13 @@ body {
 .insignia-img {
     display: block;
     margin: 10px auto;
-    /* width:  ;Adjust width as needed */
-    /* padding: 10px; */
+}
+
+.table {
+    width: 100%;
+    table-layout: auto; /* Allows the table to adjust its width */
+    max-width: 100%; /* Prevents the table from exceeding the container width */
+    overflow-x: auto; /* Adds horizontal scroll if necessary */
 }
 
 .table tbody tr td {
@@ -252,15 +258,34 @@ body {
 }
 
 .table tbody tr {
-    height: 200px; /* Adjust height as needed */
+    height: 20vh; /* Adjust height as needed */
+    max-width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Horizontal scroll for smaller screens */
+        font-size: 12.5px;
+        
+        
+    }
 }
 
 
 
 
 
-  /* 11th Division Styles */
-  .division11 {
+
+
+
+
+
+
+
+
+/* 11th Division Styles */
+.division11 {
     background-color: #d3d3d3; /* Grey background */
     padding: 10px;
 }

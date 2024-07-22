@@ -235,19 +235,33 @@ body {
 .insignia-img {
     display: block;
     margin: 10px auto;
-    /* width:  ;Adjust width as needed */
-    /* padding: 10px; */
+}
+
+.table {
+    width: 100%;
+    table-layout: auto; /* Allows the table to adjust its width */
+    max-width: 100%; /* Prevents the table from exceeding the container width */
+    overflow-x: auto; /* Adds horizontal scroll if necessary */
 }
 
 .table tbody tr td {
     vertical-align: middle;
-    text-align: center;
 }
 
 .table tbody tr {
-    height: 26px; /* Adjust height as needed */
+    height: auto; /* Adjust height as needed */
+    max-width: 100%;
 }
-
+@media only screen and (max-width: 600px) {
+    .table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Horizontal scroll for smaller screens */
+        font-size: 12.5px;
+        
+        
+    }
+}
 
 
 
