@@ -232,6 +232,13 @@ body {
     margin: 20px;
 }
 
+.division5EP {
+    padding: 8px;
+    margin: 20px;
+    line-height: 30px;
+}
+
+
 .division5 #heading {
     text-align: left;
    
@@ -249,7 +256,7 @@ body {
 
 .photo {
     border: 2px solid #ccc;
-    padding: 20px;
+    padding: 15px;
     margin: 10px;
     text-align: center;
 }
