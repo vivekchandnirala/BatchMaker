@@ -234,6 +234,7 @@ body {
 
 .division5 #heading {
     text-align: left;
+   
 }
 
 .division5 #content {
@@ -258,13 +259,16 @@ body {
     height: auto;
 }
 
+#headingF{
+    margin-left: 50px;
+}
 
 
 /* Style for particular Flag page */
 .division50 img{
     width: 50%;
     height: 39vh;
-    background-color: yellow;
+    background-color: rgb(255, 255, 255);
 }
 @media only screen and (max-width:600px){
 
